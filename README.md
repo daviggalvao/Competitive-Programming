@@ -1,4 +1,4 @@
-## 🛠️ Template Padrão em C++
+## 🛠️ Standard C++ Template
 
 ```cpp
 #include <bits/stdc++.h>
