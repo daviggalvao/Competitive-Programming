@@ -29,7 +29,6 @@ int main(void){
         if(l!=r){
             string s1, s2, sub = s.substr(l, r-l+1);
             int l1 = 0, l2 = 0, r1 = sub.length() - 1, r2 = sub.length() - 1;
-            //Back -> Front
             while(l1<=r1){
                 if(isPalindrome(sub.substr(l1, r1-l1+1))){
                     s1 = sub.substr(l1, r1-l1+1);
@@ -37,7 +36,6 @@ int main(void){
                 }
                 l1++;
             }
-            //Front -> Back
             while(l2<=r2){
                 if(isPalindrome(sub.substr(l2, r2-l2+1))){
                     s2 = sub.substr(l2, r2-l2+1);
