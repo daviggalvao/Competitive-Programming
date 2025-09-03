@@ -7,7 +7,7 @@ void hanoi(int n, int begin, int aux, int end){
         return;
     }
     hanoi(n-1, begin, end, aux);
-    cout << begin << ' ' << end << '\n';
+    cout << begin << ' ' << end << '\n'; 
     hanoi(n-1, aux, begin, end);
 }
 
