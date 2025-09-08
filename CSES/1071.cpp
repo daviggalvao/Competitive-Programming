@@ -1,33 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int main(void){
-    int t;
+ 
+int main(void) {
+    long t, x, y;
     cin >> t;
-    while(t--){
-        long l,c;
-        cin >>  l >> c;
-        // linha par = dec ate a diagonal
-        // linha imp = cre ate a diagonal
-        // coluna par = dec pra cima
-        // coluna imp = cre pra cima
-        int a = 1;
-        int n=max(l,c);
-        for(int i=1; i<n; i++){
-            a += 2*i;
-        }
-        if(l<n){
-
-        }
-        if(l>n){
-
-        }
-        if(c<n){
-
-        }
-        if(c>n){
-
-        }
-        cout << a << endl;
+    while(t--){ 
+        cin >> x >> y;
+        if(x==y) cout << x*x-x+1 << '\n';
+        if(x>y) (x%2==0)? cout << x*x-y+1 << '\n' : cout << x*x-2*x+y+1 << '\n';
+        if(x<y) (y%2==0)? cout << y*y-2*y+x+1 << '\n' : cout << y*y-x+1 << '\n';
     }
-}       
+}
