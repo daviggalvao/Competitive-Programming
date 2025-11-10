@@ -1,8 +1,4 @@
-## 🛠️ Standard C++ Template
-
-```cpp
 #include <bits/stdc++.h>
-#define ll long long
 using namespace std;
 
 int main(void){
@@ -10,6 +6,11 @@ int main(void){
     int t;
     cin >> t;
     while(t--){
+        int n,m,a,b,sum=0;
+        bool row = true;
+        cin >> n >> m >> a >> b;
+        n--; m--; a--; b--;
         
+        cout << sum << '\n';
     }
 }
