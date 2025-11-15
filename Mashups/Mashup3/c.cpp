@@ -3,22 +3,21 @@
 using namespace std;
 
 bool palindrome(int m, string sub){
-    int n = sub.size();
+    int n = sub.length();
     vector<int> cont(26, 0);
     for(int i = 0; i < m; i++) cont[sub[i] - 'a']++;
     for(int i = 0; i < n/2; i++){
         int pair = n - i - 1;
         if(i < m){
             if(pair >= m){
-                if(cont[sub[pair] - 'a'] == 0) return false;
+                if(!cont[sub[pair] - 'a']) return false;
                 cont[sub[pair] - 'a']--;
             }
-        } 
+        }
         else if(sub[i] != sub[pair]) return false;
     }
-    int odd = 0;
-    for(int c = 0; c < 26; c++) if(cont[c]%2 != 0) odd++;
-    return odd<2;
+    for(int c = 0; c < 26; c++) if(cont[c]%2 != 0) return false;
+    return true;
 }
 
 int main(void){
@@ -36,7 +35,7 @@ int main(void){
         n -= 2*i;
         string sub = s.substr(i, n);
         int ans = n;
-        for(int k = 0; k < 2; k++){
+        for(int j = 0; j < 2; j++){
             int l = 1, r = n;
             while(l <= r){
                 int m = (l + r)/2;
