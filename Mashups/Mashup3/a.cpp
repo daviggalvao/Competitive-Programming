@@ -12,10 +12,9 @@ int f(int x){
 }
 
 int main(void){
-    int t;
+    int t, n, m, a, b;
     cin >> t;
     while(t--){
-        int n, m, a, b;
         cin >> n >> m >> a >> b;
         cout << 1 + min({f(a) + f(m), f(n-a+1) + f(m), f(n) + f(b), f(n) + f(m-b+1)}) << '\n';
     }

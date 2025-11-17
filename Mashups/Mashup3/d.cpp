@@ -18,35 +18,15 @@ int main(void){
     for(int k=0, i=1, j=2; k<4; k++){
         cout << "? " << i << " " << j << endl;
         cin >> answer;
-        if(k==0){
-            p0 = findPair(answer);
-        }
+        if(k==0) p0 = findPair(answer);
         else if(k==1){
             p1 = findPair(answer);
-            if(p0.first == p1.first){
-                a[1] = p0.first;
-                a[0] = p0.second;
-                a[2] = p1.second;
-            } 
-            else if(p0.first == p1.second){
-                a[1] = p0.first;
-                a[0] = p0.second;
-                a[2] = p1.first;
-            } 
-            else if(p0.second == p1.first){
-                a[1] = p0.second;
-                a[0] = p0.first;
-                a[2] = p1.second;
-            } 
-            else{
-                a[1] = p0.second;
-                a[0] = p0.first;
-                a[2] = p1.first;
-            }
+            p1 = findPair(answer);
+            a[1] = (p0.first == p1.first || p0.first == p1.second)? p0.first : p0.second;
+            a[0] = (a[1] == p0.first)? p0.second : p0.first;
+            a[2] = (a[1] == p1.first)? p1.second : p1.first;
         }
-        else{
-            a[k+1] = answer/a[k];
-        }
+        else a[k+1] = answer/a[k];
         i++; j++;
     }
     for(int i=0; i<5; i++){
@@ -54,8 +34,6 @@ int main(void){
             if(a[i]==num[j].first) num[j].second = true;
         }
     }
-    for(int i=0; i<6; i++){
-        if(!num[i].second) a[5] = num[i].first;
-    }
+    for(int i=0; i<6; i++) if(!num[i].second) a[5] = num[i].first;
     cout << "! " << a[0] << " " << a[1] << " " << a[2] << " " << a[3] << " " << a[4] << " " << a[5] << '\n';
 }
