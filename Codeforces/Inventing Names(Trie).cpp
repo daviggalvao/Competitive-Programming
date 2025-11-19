@@ -7,7 +7,7 @@ struct TrieNode{
 
     TrieNode(){
         endOfWord = false;
-        for(int i=0; i<26; i++){
+        for(int i = 0; i < 26; i++){
             children[i] = nullptr;
         }
     }
@@ -38,12 +38,11 @@ string findSmallest(TrieNode* node, string &str, int k){
     if(!str.empty() && (node == nullptr || !node->endOfWord)) return str;
     if(str.size() == k) return "";
     for(char c = 'a'; c <= 'z'; c++){
-        TrieNode* nextNode = nullptr;
-        if(node != nullptr) nextNode = node->children[c - 'a'];
+        TrieNode* nextNode = node->children[c - 'a'];
         str.push_back(c);
         string result = findSmallest(nextNode, str, k);
-        str.pop_back();
         if(!result.empty()) return result;
+        str.pop_back();
     }
     return "";
 }
