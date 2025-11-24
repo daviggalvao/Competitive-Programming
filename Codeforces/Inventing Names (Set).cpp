@@ -7,10 +7,12 @@ string findSmallest(string &str, int k){
     if(str.size() && name.find(str)==name.end()) return str;
     if(str.size()==k) return "";
     for(char c='a'; c<='z'; c++){
-        string aux = str + c;
-        string find = findSmallest(aux, k);
+        str.push_back(c);
+        string find = findSmallest(str, k);
         if(find.size()) return find;
+        str.pop_back();
     }
+    return "";
 }
 
 int main(void){
