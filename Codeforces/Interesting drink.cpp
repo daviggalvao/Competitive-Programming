@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 #define ll long long
+#define endl '\n'
+#define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 using namespace std;
 
-int main(void){
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+int main(void){ fastio
     int n, d, pix;
     cin >> n;
     vector<int> prices(n);
@@ -12,7 +13,6 @@ int main(void){
     cin >> d;
     while(d--){
         cin >> pix;
-        cout << upper_bound(prices.begin(), prices.end(), pix) - prices.begin() << '\n';
+        cout << upper_bound(prices.begin(), prices.end(), pix) - prices.begin() << endl;
     }
-
 }

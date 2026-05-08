@@ -1,6 +1,3 @@
-## 🛠️ Standard C++ Template
-
-```cpp
 #include <bits/stdc++.h>
 #define ll long long
 #define endl '\n'
@@ -8,5 +5,7 @@
 using namespace std;
 
 int main(void){ fastio
-    
+    ll n;
+    cin >> n;
+    cout << (1+n)*n/2;
 }

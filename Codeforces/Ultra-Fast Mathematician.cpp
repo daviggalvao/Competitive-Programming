@@ -1,6 +1,3 @@
-## 🛠️ Standard C++ Template
-
-```cpp
 #include <bits/stdc++.h>
 #define ll long long
 #define endl '\n'
@@ -8,5 +5,10 @@
 using namespace std;
 
 int main(void){ fastio
-    
+    string a, b;
+    cin >> a >> b;
+    for(int i=0, n=a.size(); i<n; i++){
+        (a[i]!=b[i])? cout << '1' : cout << '0';
+    }
+    cout << endl;
 }

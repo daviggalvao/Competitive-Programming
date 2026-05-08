@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
 int main(void){
-    long long int n, sum=0;
+    ll n, a;
     cin >> n;
-    for(long long int i=0; i<n-1; i++){
-        int a;
+    ll sum = ((n+1)*n/2);
+    for(ll i=0; i<n-1; i++){
         cin >> a;
-        sum += a;
+        sum -= a;
     }
-    long long int sumT = (1+n) * n/2;
-    cout << sumT - sum << endl;
+    cout << sum << endl;
 }

@@ -1,6 +1,3 @@
-## 🛠️ Standard C++ Template
-
-```cpp
 #include <bits/stdc++.h>
 #define ll long long
 #define endl '\n'
@@ -8,5 +5,10 @@
 using namespace std;
 
 int main(void){ fastio
-    
+    int t, n;
+    cin >> t;
+    while(t--){
+        cin >> n;
+        (n%3==0)? cout << "Second\n" : cout << "First\n";
+    }
 }

@@ -1,6 +1,3 @@
-## 🛠️ Standard C++ Template
-
-```cpp
 #include <bits/stdc++.h>
 #define ll long long
 #define endl '\n'
@@ -8,5 +5,10 @@
 using namespace std;
 
 int main(void){ fastio
-    
+    int t, x, y;
+    cin >> t;
+    while(t--){
+        cin >> x >> y;
+        (x%2!=0 and y%2!=0)? cout << "NO\n" : cout << "YES\n";
+    }
 }

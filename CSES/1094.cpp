@@ -1,19 +1,15 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
 int main(void){
-    int n;
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ll n, prev, curr, count=0;
     cin >> n;
-    long long int a, count = 0;
-    cin >> a;
+    cin >> prev;
     for(int i=1; i<n; i++){
-        long long int tmp = a;
-        cin >> a;
-        long long dif = a - tmp;
-        if(dif<0){
-            count -= dif;
-            a -= dif;
-        }
+        cin >> curr;
+        (curr < prev)? count += (prev - curr) : prev = curr;
     }
-    cout << count << endl;
-}       
+    cout << count;
+}
