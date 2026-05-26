@@ -5,11 +5,14 @@
 using namespace std;
 
 int main(void){ fastio
-    int t; 
+    int t;
     cin >> t;
     while(t--){
-        int l[4];
-        cin >> l[0] >> l[1] >> l[2] >> l[3];
-        (l[0] == l[1] && l[1] == l[2] && l[2] == l[3])? cout << "YES\n" : cout << "NO\n";
+        string s1, s2;
+        cin >> s1 >> s2;
+        char tmp = s1[0];
+        s1[0] = s2[0];
+        s2[0] = tmp;
+        cout << s1 << ' ' << s2 << endl;
     }
 }

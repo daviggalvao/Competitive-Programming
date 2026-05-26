@@ -9,8 +9,8 @@ int main(void){ fastio
     cin >> t;
     while(t--){
         int n, check=1;
-        char s[n];
         cin >> n;
+        char s[n];
         for(int i=0; i<n; i++){
             cin >> s[i];
             if(!isalnum(s[i])){

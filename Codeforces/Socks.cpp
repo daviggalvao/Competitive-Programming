@@ -5,12 +5,15 @@
 using namespace std;
 
 int main(void){ fastio
-    ll n, a;
+    int n, tmp, sum=0;
     cin >> n;
-    ll sum = ((n+1)*n/2);
-    for(ll i=0; i<n-1; i++){
-        cin >> a;
-        sum -= a;
+    unordered_map<int, int> hm;
+    while(n--){
+        cin >> tmp;
+        hm[tmp] += 1;
     }
-    cout << sum << endl;
+    for(auto i: hm){
+        sum += i.second/2;
+    }
+    cout << sum;
 }

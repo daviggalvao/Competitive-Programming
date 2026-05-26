@@ -7,21 +7,10 @@ using namespace std;
 int main(void){ fastio
     int start, end, ans=0;
     cin >> start >> end;
-    while(start!=end){
-        if(start>end){
-            ans = start - end;
-            start = end;
-        }
-        else{
-            if(2*start<=end){
-                start *= 2;
-                ans++;
-            }
-            else{
-                start--;
-                ans++;
-            } 
-        }
+    while(end>start){
+        end%2==0? end /= 2 : end++;
+        ans++;
     }
+    ans += start-end;
     cout << ans;
 }
